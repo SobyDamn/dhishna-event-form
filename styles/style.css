@@ -1,0 +1,81 @@
+@font-face { font-family: textfont; 
+src: url("fonts/MeriendaBold.ttf");
+}
+* {
+   font-family: textfont;
+}
+h1 {
+text-align:center;
+text-shadow: 1.5px 1px rgb(0,0,0,0.7);
+color:white;
+}
+body { 
+background-image: linear-gradient(to bottom right, rgb(120,46,136) , rgb(239,57,122));
+background-repeat: no-repeat;
+background-color: rgb(120,46,136);
+}
+.textInput {
+	float: centre;
+	border: 0.5px solid rgb(239,57,122,0.5);
+	border-radius: 3px;
+	background-color:rgb(255,255,255,0.6);
+	}
+
+.button2 {
+border-radius: 20px;
+background-image: linear-gradient(to bottom right , rgb(239,57,122), rgb(120,46,136));
+padding: 4px 8px;
+text-align: center;
+text-decoration: bold;
+display: inline-block;
+font-size: 8px;
+border: none;
+color: rgb(102, 204, 255);
+text-shadow: 1.5px 1px rgb(0,0,0,0.17);
+box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+transition-duration: 0.4s;
+}
+.button {
+border-radius: 40px;
+background-image: linear-gradient(to bottom right , rgb(239,57,122), rgb(120,46,136));
+padding: 25px 42px;
+text-align: center;
+text-decoration: bold;
+display: inline-block;
+font-size: 15px;
+border: none;
+color: white;
+box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+transition-duration: 0.4s;
+}
+.button:hover
+{
+  background-image: linear-gradient(to bottom right , rgb(120,46,136) , rgb(239,57,122));
+  color: white;
+}
+div.container {
+  background-image: linear-gradient(to bottom right , rgb(216,65,148), rgb(243,169,100));
+  width:300px;
+  padding:100px;
+  border: none;
+  border-radius: 40px;
+  border-style: none;
+  color: black;
+  box-shadow: 4px 4px 8px 4px rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+  text-shadow: 1.5px 1px rgb(0,0,0,0.17);
+}
+@media (max-width: 480px) { div.container {padding: 50px 20px;
+}
+}
+
+@media (min-width: 480px) { div.container {padding: 100px;
+width: 400px;
+}
+}
+#eventForm {
+background-image:url("img/dhishnaLogo.png"); /*replace with good quality img if possible*/
+background-size:100%;
+background-repeat: no-repeat;
+background-position: center;
+opacity: 1.0;
+}
