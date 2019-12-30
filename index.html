@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+
+<html>
+   
+    <head>
+    	
+    	
+    	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    	<!--Please Don't forget to load firebase-->
+        <script src="https://www.gstatic.com/firebasejs/3.7.0/firebase.js"></script>
+        <!--using jQuery for database-->
+        <script src="https://code.jquery.com/jquery-2.2.0.min.js"></script>
+        <link rel="stylesheet" href="styles/style.css"/>
+        <title>DHISNA EVENTS</title>
+    </head>
+    <body bgcolor="#E6E6FA">
+       <h1><b>Dhishna Events</b></h1> <!--add logo will look better and don't make it gaudy-->
+    <script src="scripts/database.js"></script>
+    <center>
+    <div class="container">
+      <form id="eventForm">
+        <p align="left">
+        <label for="eventName">Name:</label><input class="textInput" id="eventName" placeholder="Event Name" required></input>
+        <br>
+        Caption: <input class="textInput" id="caption" placeholder="Details" required></input>
+        <br>
+        Description: <textarea class="textInput" id="description" rows = "5" cols ="30" name = "description" style= "vertical-align:top;" required placeholder="Detailed Description"></textarea><br>
+        Is Registration Open: 
+      <select class="button2" size="1" id="registration_status">
+        <option value="--Select--" selected>--Select--</option>
+        <option value="Open">Open</option>
+        <option value="Closed">Closed</option>
+       </select>
+       <br>
+       	<br>
+      <h3 align="left">Coordinator</h3>
+     <p align="left">
+        Name: <centre><input class="textInput" id="cname" placeholder="Name..." required></input></centre>
+        <br>
+        Phone No.: <input class="textInput" id="PhoneNo" type = "number" placeholder="Contact Number" required></input>
+        <br>
+        	<!--Fix image upload ASAP-->
+         <label>Image: </label><input class ="button2" onchange="loadFile(event)" type="file" accept="image/*" id="fileButton"/>
+        <img id="output" width="100" height="100" align="top"/> 
+      <script type="text/javascript" src="scripts/image_loader.js"> </script>
+      <script>
+      	var config = {
+                 apiKey: "AIzaSyBbzBc0mu2fIb0tYcD3toX7bIeLP8n_Zsg",
+                 authDomain: "dhisna-event.firebaseapp.com",
+                 databaseURL: "https://dhisna-event.firebaseio.com",
+                 projectId: "dhisna-event",
+                 storageBucket: "dhisna-event.appspot.com",
+                 messagingSenderId: "88554708487",
+                 appId: "1:88554708487:web:3b6503f12d8d36129594a2",
+                 measurementId: "G-S0VDWKKVK6"
+                };
+                firebase.initializeApp(config);
+     </script>
+     
+        <br>
+        	<!----Fix Upload button,It does nothing!-->
+       <button class="button" style="padding: 6px 14px; font-size: 10px;" onclick="uploadImg()" disabled>Upload Image</button>
+       <p id="sucUpload" style="color: white; font-size: 12px;" align="left"></p> 
+       <!--FIX ME! not able to include script from script folder,Try Coding from PC next time-->
+       <script>
+     	
+     	var fileButton = document.getElementById("fileButton");
+              fileButton.addEventListener('change', function(e){
+                  var file = e.target.files[0];
+                  var storageRef = firebase.storage().ref(file.name);
+                  storageRef.put(file);
+              });
+         function uploadImg() {
+         	
+          document.getElementById("sucUpload").innerHTML = "Image Uploaded Successfully!";
+         	}
+      </script>
+      </p>
+       	</div>
+       <br>
+       	<br>
+        <center><input type="submit" class ="button" float = "center" formaction="submitted.html" value="Submit" /></center>
+      </form>
+    </div>
+    </center>
+  </body>
+</html>
